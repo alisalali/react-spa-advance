@@ -1,8 +1,8 @@
-import { json, useLoaderData, useParams } from "react-router-dom";
+import { json, useLoaderData, useRouteLoaderData } from "react-router-dom";
 import EventItem from "../components/EventItem";
 
 const EventDetailPage = () => {
-  const data = useLoaderData();
+  const data = useRouteLoaderData("event-detail");
   const event = data.event;
 
   return <EventItem event={event} />;
@@ -17,7 +17,7 @@ export const loader = async ({ request, params }) => {
   if (!response.ok) {
     throw json({ message: "Error fetching event" }, { status: 500 });
   } else {
-    console.log(response);
+    console.log();
     return response;
   }
 };
