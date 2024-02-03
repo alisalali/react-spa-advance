@@ -28,12 +28,14 @@ import NewEventPage from "./pages/NewEvent";
 import EditEventPage from "./pages/EditEvent";
 import RootLayout from "./pages/Root";
 import EventRootPage from "./pages/EventRoot";
+import ErrorPage from "./pages/Error";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <RootLayout />,
+      errorElement: <ErrorPage />,
       children: [
         { index: true, element: <HomePage /> },
         {
