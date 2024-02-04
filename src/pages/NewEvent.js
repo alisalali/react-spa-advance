@@ -22,7 +22,7 @@ export const action = async ({ request, params }) => {
   const response = await fetch("http://localhost:8080/events", {
     method: "POST",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(eventData),
   });
