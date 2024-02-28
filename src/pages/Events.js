@@ -5,7 +5,7 @@ const EventsPage = () => {
   const { events } = useLoaderData();
 
   return (
-    <Suspense fallback={<p>Loading ...</p>}>
+    <Suspense fallback={<p style={{ textAlign: "center" }}>loading...</p>}>
       <Await resolve={events}>
         {(loadedEvents) => <EventsList events={loadedEvents} />}
       </Await>
